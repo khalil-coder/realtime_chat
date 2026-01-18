@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>WhatsApp Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;500;600&display=swap" rel="stylesheet"> -->
+</head>
+
+<body>
+    <div class="whatsapp-app">
+        <aside class="side-panel">
+            <header class="panel-header">
+                <h4 id="brand">RealTime Chat</h4>
+                <div style="display: flex; gap: 4px; align-items: center;">
+                    <div class="user-avatar"></div>
+                    <div>
+                        <p id="user-full-name"></p>
+                        <p id="username"></p>
+                    </div>
+                </div>
+                <!-- <div class="header-actions">
+                    <button class="icon-btn">⭕</button> <button class="icon-btn">💬</button> <button
+                        class="icon-btn">⋮</button>
+                </div> -->
+            </header>
+
+            <div class="chat-subheading">
+                <h3>Chats</h3>
+                <div class="tab-btn-group">
+                    <button id="room-tab-btn" class="tab-btn">Rooms</button>
+                    <button id="group-tab-btn" class="tab-btn">Groups</button>
+                </div>
+            </div>
+
+            <div class="chat-list" id="chat-list">
+            </div>
+        </aside>
+
+    </div>
+
+    <!--  -->
+    <div class="options-card">
+        <div class="options">
+        </div>
+    </div>
+    <!--  -->
+    <div id="options">
+        <button id="add">+</button>
+        <ul class="hide">
+            <li role="button" id="new-message" onclick="window.location.href='/select-user/'">Start conversation</li>
+            <li role="button" id="create-group">Create new group</li>
+        </ul>
+
+    </div>
+    <script src="script.js" type="module"></script>
+</body>
+
+</html>

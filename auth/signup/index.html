@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../auth.css">
+    <title>Sign Up</title>
+</head>
+
+<body class="auth-page">
+    <div class="auth-card">
+        <h2>Sign Up</h2>
+        <p>It's quick and easy.</p>
+        <form id="signup-form">
+            <div class="form-group">
+                <input type="text" placeholder="Username" id="username" required>
+                <p id="username-error" class="form-errors"></p>
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="First Name" id="first-name" required>
+                <p id="first-name-error" class="form-errors"></p>
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="Last Name" id="last-name" required>
+                <p id="last-name-error" class="form-errors"></p>
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="Email address" id="email" required>
+                <p id="email-error" class="form-errors"></p>
+            </div>
+            <div class="form-group">
+                <input type="tel" placeholder="Phone Number" id="phone-number">
+                <p id="phone-number-error" class="form-errors"></p>
+            </div>
+            <div class="form-group">
+                <input type="password" placeholder="New password" id="password" required>
+                <p id="password-error" class="form-errors"></p>
+            </div>
+            <div class="form-group">
+                <input type="password" placeholder="Confirm password" id="password2" required>
+            </div>
+            <p id="server-error"></p>
+            <button type="submit" id="signup-btn" class="auth-btn" style="background-color: #42b72a;">Sign Up</button>
+            <a href="login.html" class="auth-link">Already have an account?</a>
+        </form>
+    </div>
+    <script type="module" src="./signup.js"></script>
+</body>
+
+</html>

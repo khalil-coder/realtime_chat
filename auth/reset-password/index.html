@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../auth.css">
+    <title>Reset Password</title>
+</head>
+
+<body class="auth-page">
+    <div class="auth-card">
+        <h2>Reset Your Password</h2>
+        <p>Enter your new password.</p>
+        <p id="token-error"></p>
+        <form id="reset-form">
+            <div class="form-group">
+                <input type="password" value="stringer" id="password" placeholder="New password" required>
+                <p id="password-error" class="form-errors"></p>
+            </div>
+            <div class="form-group">
+                <input type="password" id="password2" value="stringer" placeholder="Confirm password" required>
+            </div>
+            <p id="reset-error" class="form-errors"></p>
+            <button type="submit" id="reset-btn" class="auth-btn">Reset</button>
+            <!-- <a href="login.html" class="auth-link">Cancel</a> -->
+        </form>
+    </div>
+    <script src="./index.js" type="module"></script>
+</body>
+
+</html>

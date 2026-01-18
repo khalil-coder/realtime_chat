@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Nexus Chat | Modern Messaging</title>
+    <link rel="stylesheet" href="../chat-group/style.css">
+</head>
+
+<body>
+
+    <div id="app-container" class="app-container">
+        <main class="chat-main">
+            <header class="chat-header">
+                <div class="current-chat" style="justify-content: start; gap: 5px">
+                    <div class="user-avatar">
+                    </div>
+                    <div>
+                        <h3 id="active-chat-name"></h3>
+                        <small id="active-chat-status">Active now</small>
+                    </div>
+                </div>
+
+
+
+            </header>
+            <div class="members-card">
+                <div class="members">
+                </div>
+            </div>
+
+            <div class="message-viewport" id="message-viewport">
+                <div id="messages-list" class="messages-list">
+                </div>
+            </div>
+
+            <footer class="chat-footer">
+                <form id="chat-form" class="input-area">
+                    <button type="button" class="icon-btn">📎</button>
+                    <input type="text" id="msg-input" placeholder="Type your message..." autocomplete="off">
+                    <button type="submit" class="send-btn">
+                        <span class="desktop-only">Send</span>
+                        <span class="mobile-only">➤</span>
+                    </button>
+                </form>
+            </footer>
+        </main>
+    </div>
+    <div hidden id="smth-went-wrong" style="text-align: center; display: grid; gap: 5px; margin-top: 2rem">
+        <p id="error-msg" style="color: red">Something went wrong. Unable to retrieve chat room. </p>
+        <div id="refresh-btn">
+            <button style="padding-inline: 5px; padding-block: 4px; border-radius: 5px"
+                id="refresh-chat-group">Refresh</button>
+        </div>
+    </div>
+    <script src="script.js" type="module"></script>
+</body>
+
+</html>
