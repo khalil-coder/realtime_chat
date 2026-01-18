@@ -1,0 +1,18 @@
+:root {
+    --wa-teal: #00a884;
+    --wa-bg: #f0f2f5;
+    --wa-sidebar: #ffffff;
+    --wa-header: #f0f2f5;
+    --wa-bubble-out: #d9fdd3;
+    --wa-bubble-in: #ffffff;
+    --wa-text: #111b21;
+    --wa-muted: #667781;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Helvetica, sans-serif;
+}
+

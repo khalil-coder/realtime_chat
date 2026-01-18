@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../auth.css">
+    <link rel="stylesheet" href="../../global.css">
     <title>Reset Password</title>
 </head>
 
@@ -15,11 +16,11 @@
         <p id="token-error"></p>
         <form id="reset-form">
             <div class="form-group">
-                <input type="password" value="stringer" id="password" placeholder="New password" required>
+                <input type="password" id="password" placeholder="New password" required>
                 <p id="password-error" class="form-errors"></p>
             </div>
             <div class="form-group">
-                <input type="password" id="password2" value="stringer" placeholder="Confirm password" required>
+                <input type="password" id="password2" placeholder="Confirm password" required>
             </div>
             <p id="reset-error" class="form-errors"></p>
             <button type="submit" id="reset-btn" class="auth-btn">Reset</button>

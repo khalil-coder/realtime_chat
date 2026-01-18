@@ -1,7 +1,7 @@
 import { Auth, clientResourceGetter, fetcherClient, getCurrentUser } from "../fetcher.js"
 import { popToast } from "../utils.js"
 async function loadAllUsers() {
-    const res = await clientResourceGetter("users", {requireAuth: false})
+    const res = await clientResourceGetter("users", { requireAuth: false })
     return res
 }
 async function handleStartConversation(user2ID) {
@@ -33,20 +33,24 @@ async function initPage() {
     if (allUsers) {
         allUsers.map((u) => {
             if (user.short_id !== u.short_id) {
-                const html = `<div style="margin-bottom:10px; display: flex; justify-content: space-between; align-items: center">
-                <div>
-                <p style="margin: 0">
-                ${u.first_name} ${u.last_name}
-                </p>
-                <span style="color: gray">@${u.username}</span>
-                </div>
+                const html = `
+                <div class="user-cards">
+                    <div style="display: flex; gap: 4px; align-items: center;">
+                        <div class="user-avatar"></div>
+                        <div>
+                            <p class='user-full-name' style="margin: 0">
+                            ${u.first_name} ${u.last_name}
+                            </p>
+                            <span class='username' style="color: gray">@${u.username}</span>
+                        </div>
+                    </div>
                 <button id='${u.short_id}_btn' style="padding-inline: 5px; padding-block: 3px;">💬</button>
                 </div>`
                 userContainer.insertAdjacentHTML("beforeend", html)
                 document.getElementById(u.short_id + "_btn").onclick = () => handleStartConversation(u.short_id)
             }
         })
-    }else{
+    } else {
         const html = `<i>No users to chat with.</i>`
         userContainer.insertAdjacentHTML("beforeend", html)
     }

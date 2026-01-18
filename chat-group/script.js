@@ -167,7 +167,11 @@ async function initWs() {
         return clientResourceGetter(`chat-group/${chatGroupID}`, { requireAuth: true })
     }
     async function loadPastMessages(messages, user_short_id) {
-        if (!messages) return
+        if (typeof messages !== 'object') return
+        if (messages?.length === 0) {
+            messagesList.insertAdjacentHTML('afterbegin', `<i style="text-align:center; transform: translateY(500%)">Start group conversation 💬👥</i>`);
+            return
+        }
         messages.map((m) => {
             const msgData = {
                 id: Date.now(m.created_at),

@@ -1,5 +1,6 @@
 import { Auth, refreshToken } from "./fetcher.js"
 export function popToast(type, message) {
+    if (!message) return
     const body = document.querySelector('body')
     const style = `
         border-radius: 15px;

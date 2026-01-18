@@ -201,6 +201,10 @@ async function initPage() {
     createGroup.onclick = () => newGroupHandler(optionsCard, options)
 
 
+    document.getElementById("logout-btn").onclick = ()=>{
+        Auth.clear();
+        window.location.href = "/auth/login"
+    }
 
 }
 window.onload = initPage

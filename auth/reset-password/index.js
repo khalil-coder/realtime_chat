@@ -1,5 +1,5 @@
 import { fetcherClient, setError } from "../../fetcher.js"
-const authCard = document.getElementsByClassName("auth-card")[0]
+import { popToast } from "../../utils.js"
 const resetForm = document.getElementById("reset-form")
 const tokenError = document.getElementById("token-error")
 
@@ -36,19 +36,25 @@ async function resetPassword() {
         body: JSON.stringify({ password, password2, user_short_id_token: userIDToken.trim(), token: token.trim() })
     })
     if (res === null) {
-        setError(resetError, "Network error occurred. Please try again.")
+        setError(resetError, '')
+        popToast("error", "Network error occurred. Please try again.")
     }
     else {
-        const data = await res.json();
-        console.log(data)
         if (res.ok) {
             setError(resetError, '')
             window.location.href = "/auth/login"
         } else {
-            setError(resetError, '')
-            const { password, token, detail, non_field_errors } = data
-            setError(passwordError, password)
-            setError(resetError, token || non_field_errors || detail)
+            try {
+                const data = await res.json();
+                const { password, token, detail, non_field_errors } = data
+                setError(passwordError, password)
+                setError(resetError, token || non_field_errors)
+                popToast(detail || res.statusText)
+            } catch {
+                popToast(res.statusText)
+            } finally {
+
+            }
         }
     }
 
@@ -67,5 +73,5 @@ resetForm.addEventListener('submit', async (e) => {
 
     resetBtn.removeAttribute("disabled")
     resetBtn.setAttribute("style", "background: normal")
-    resetBtn.innerText = "Log in"
+    resetBtn.innerText = "Reset"
 })

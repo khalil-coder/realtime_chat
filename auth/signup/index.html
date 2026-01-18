@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../auth.css">
+    <link rel="stylesheet" href="../../global.css">
     <title>Sign Up</title>
 </head>
 
 <body class="auth-page">
-    <div class="auth-card">
+    <div class="auth-card" style="max-height: 90%; overflow: auto; scrollbar-width: thin;">
         <h2>Sign Up</h2>
         <p>It's quick and easy.</p>
         <form id="signup-form">
@@ -42,7 +43,7 @@
             </div>
             <p id="server-error"></p>
             <button type="submit" id="signup-btn" class="auth-btn" style="background-color: #42b72a;">Sign Up</button>
-            <a href="login.html" class="auth-link">Already have an account?</a>
+            <a href="/auth/login" class="auth-link">Already have an account?</a>
         </form>
     </div>
     <script type="module" src="./signup.js"></script>

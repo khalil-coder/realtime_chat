@@ -1,0 +1,42 @@
+.user-avatar {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background: url('https://img.icons8.com/fluent/1200/user-male-circle.jpg') no-repeat center center/cover;
+}
+.container{
+    padding: 10px
+}
+.container h3{
+    margin-block: 20px
+}
+.users-container {
+    display: grid;
+    gap: 10px;
+}
+
+.users-container .user-cards {
+    background-color: white;
+    box-shadow: 0 0 6px 5px #2221;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.users-container .user-cards button {
+    border: none;
+    border-radius: 3px;
+    background-color: #3db6ed;
+}
+
+.panel-header {
+    height: 60px;
+    padding: 10px 16px;
+    background: #f0f2f5;
+    display: flex;
+    margin: 0;
+    justify-content: space-between;
+    align-items: center;
+}
